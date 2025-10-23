@@ -467,6 +467,7 @@ function Portfolio() {
                 onChange={handleInputChange}
               />
               <textarea
+                className={Styles.Message}
                 name="message"
                 id="message"
                 placeholder="Enter your message"

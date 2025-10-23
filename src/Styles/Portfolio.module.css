@@ -383,7 +383,7 @@ p {
   outline: 0px;
   font-size: 20px;
 }
-.contact-form #Message {
+.contact-form .Message {
   height: 20vh;
   border-left: solid black 5px;
   border-right: 0;

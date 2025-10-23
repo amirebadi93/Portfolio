@@ -479,13 +479,14 @@ function Portfolio() {
                 onChange={handleInputChange}
               />
               <textarea
+                id="Message"
+                className={Styles.Message}
                 name="message"
-                id={Styles.Message}
                 placeholder="Enter your message *"
                 value={formData.message}
                 onChange={handleInputChange}
                 required
-              />{" "}
+              />
               <button type="submit" disabled={isSubmitting}>
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
