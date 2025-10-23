@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "rubik";
+  src: url("../assets/Fonts/Rubik/Rubik-VariableFont_wght.ttf")
+    format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "proxima-nova";
+  src: url("../assets/Fonts/proxima-nova/Proxima-Nova-Alt-Regular.otf")
+    format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "monch";
+  src: url("../assets/Fonts/moncheurhaven/regular.otf") format("opentype");
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+.bold {
+  font-weight: bold;
+}
+.width100 {
+  width: 100%;
+}
+.width50 {
+  width: 50%;
+}
+.width25 {
+  width: 25%;
+}
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.margin-x {
+  margin: 0em 1em;
+}
+.margin-y {
+  margin: 1em 0em;
+}
+.padding-y {
+  padding: 0.5em 0em;
+}
+.padding-x {
+  padding: 0em 0.5em;
+}
+.border {
+  border: solid rgb(255, 255, 255) 1px;
+}
+.border-radius {
+  border-radius: 11px;
+}
+.column-right {
+  float: right;
+}
+.column-left {
+  float: left;
+}
+.inline {
+  display: inline-block;
+}

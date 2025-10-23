@@ -1,0 +1,147 @@
+/* RTL (Right-to-Left) Specific Styles for Persian/Farsi Pages */
+
+/* Home Page RTL Adjustments */
+[dir="rtl"] .home {
+  direction: rtl;
+  text-align: right;
+  background-position: left;
+}
+
+[dir="rtl"] .container {
+  direction: rtl;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+[dir="rtl"] .About-me {
+  right: 5em;
+  left: auto;
+  text-align: right;
+}
+
+[dir="rtl"] .social > img {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+/* Portfolio Page RTL Adjustments */
+[dir="rtl"] .Hero-About-me {
+  text-align: right;
+  padding: 0 5vw 0 0;
+}
+
+[dir="rtl"] .Explore-items {
+  text-align: right !important;
+}
+
+[dir="rtl"] .Explore-header {
+  padding: 0 20px 0 0;
+}
+
+[dir="rtl"] .Explore-text {
+  padding: 0 20px 0 0;
+}
+
+[dir="rtl"] .Explore-item-img {
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .Using-header h1,
+[dir="rtl"] .Learning-header h1,
+[dir="rtl"] .Other-header h1 {
+  text-align: right;
+}
+
+[dir="rtl"] .Using-icons,
+[dir="rtl"] .Learning-icons,
+[dir="rtl"] .Other-icons {
+  justify-content: right;
+}
+
+[dir="rtl"] .contact-form input,
+[dir="rtl"] .contact-form #Message {
+  border-right: solid black 5px;
+  border-left: 0;
+  text-align: right;
+}
+
+[dir="rtl"] .contact-form button {
+  border-left: solid 4px black;
+  border-right: solid 4px black;
+}
+
+/* Header RTL Adjustments */
+[dir="rtl"] .header {
+  direction: rtl;
+}
+
+[dir="rtl"] .header-menu ul {
+  direction: rtl;
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .header-menu li {
+  margin-left: 0;
+  margin-right: 2em;
+}
+
+[dir="rtl"] .header-logo {
+  order: 2;
+}
+
+[dir="rtl"] .header-menu {
+  order: 1;
+}
+
+/* Portfolio Hero Section RTL */
+[dir="rtl"] .hero {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .white {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+}
+
+[dir="rtl"] .black {
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+}
+
+[dir="rtl"] .backgroundimage {
+  background-position: left;
+}
+
+/* Footer RTL Adjustments */
+[dir="rtl"] .footer {
+  direction: rtl;
+  text-align: center;
+}
+
+[dir="rtl"] .footer-bottom {
+  direction: rtl;
+  text-align: center;
+}
+
+[dir="rtl"] .form-container {
+  text-align: left;
+}
+
+/* Mobile RTL Adjustments */
+@media only screen and (max-width: 700px) {
+  [dir="rtl"] .About-me {
+    margin-right: 2em;
+    margin-left: 0;
+  }
+
+  [dir="rtl"] .backgroundimage {
+    background-position: left;
+  }
+
+  [dir="rtl"] .white {
+    clip-path: none;
+  }
+
+  [dir="rtl"] .black {
+    clip-path: polygon(0% 0%, 100% 10%, 100% 100%, 0 100%);
+  }
+}

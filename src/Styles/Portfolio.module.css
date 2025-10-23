@@ -1,0 +1,655 @@
+@keyframes scroll-fade {
+  from {
+    max-height: 20vh;
+  }
+  to {
+    height: 0;
+  }
+}
+
+@font-face {
+  font-family: "proxima-light";
+  src: url(../assets/Fonts/proxima-nova/Proxima-Nova-Alt-Light.otf)
+    format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Yekan";
+  src: url(../assets/Fonts/iranyekanwebregular.woff) format("woff");
+}
+.Portfolio {
+  font-family: "proxima-nova";
+  font-size: medium;
+}
+.flex {
+  display: flex;
+}
+.Absolute {
+  position: absolute;
+}
+.Relative {
+  position: relative;
+}
+
+.hero {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding-bottom: 50px 0 0;
+}
+.white {
+  /* background-color: rgb(10, 103, 185); */
+  width: 50%;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+  /* direction: ltr; */
+}
+.black {
+  background-color: rgb(0, 0, 0);
+  width: 55%;
+  height: 100vh;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+.backgroundimage {
+  background-image: url(../assets/img/Profile-nobackground.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.Hero-container {
+  width: 70%;
+  position: relative;
+  height: calc(100vh - 100px);
+  min-height: 500px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.Hero-About-me {
+  width: 90%;
+  left: 5em;
+  bottom: 5em;
+  z-index: 10;
+  padding: 0 0 0 5vw;
+  font-size: larger;
+}
+.learnmore-button {
+  background-color: transparent;
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-color: rgb(206, 46, 46);
+  color: rgb(88, 88, 88);
+  font-size: 20px;
+  font-family: "rubik", Arial, sans-serif;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.learnmore-button:hover {
+  border: solid rgb(255, 255, 255) 1px;
+  background-color: rgb(206, 46, 46);
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: white;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+p {
+  margin: 20px 0px;
+}
+.Hero h3 {
+  color: rgb(206, 46, 46);
+  padding: 0;
+  margin: 0;
+}
+.black-divider {
+  height: 20vh;
+  animation: 1s forwards scroll-fade;
+  background-color: black;
+  animation-timeline: view();
+}
+.Info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 50px 0;
+  text-align: center;
+  scroll-margin-top: 280px;
+}
+.About-me-title {
+  border: 5px black solid;
+  padding: 5px 50px;
+  margin: 0 0 50px;
+  width: fit-content;
+  margin: auto;
+}
+.container {
+  width: 70%;
+  margin: auto;
+}
+.About-me-text {
+  padding: 50px 0 50px;
+  font-size: 20px;
+  line-height: calc(100% + 10px);
+  /* background-color: rgba(255, 255, 255, 0.7); */
+}
+.divider-img {
+  width: 100%;
+}
+.explore {
+  padding: 30px 0;
+}
+.Explore-Header {
+  border-right: solid 3px black;
+  border-left: solid black 3px;
+  width: fit-content;
+  text-align: center;
+  margin: auto;
+}
+.Explore-Header h1 {
+  padding: 0 20px;
+}
+
+/* Reveal on view (IntersectionObserver) */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  will-change: transform, opacity;
+}
+.revealVisible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.Explore-items-Holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+.Explore-items {
+  width: 45%;
+  margin: auto;
+  height: fit-content;
+  align-content: top;
+  text-align: left;
+}
+.Explore-header {
+  padding: 0 0 0 20px;
+  z-index: 50;
+}
+.Explore-text {
+  padding: 0 0 0 20px;
+  font-size: 20px;
+}
+.Explore-item-img {
+  left: 0;
+  top: -20px;
+  opacity: 0.5;
+  z-index: 0;
+}
+.Skills {
+  /* display: flex; */
+  /* flex-direction: column; */
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 50px 0;
+}
+.Skills-header {
+  border-right: solid 3px black;
+  border-left: solid black 3px;
+  width: fit-content;
+  margin: 30px auto;
+  text-align: center;
+}
+.Skills-header h1 {
+  padding: 0 20px;
+}
+.Skills-holder {
+  flex-direction: column;
+  align-items: start;
+}
+.Using,
+.Learning,
+.Other-skills {
+  width: 100%;
+  margin: 50px 0;
+}
+.Using-header,
+.Learning-header,
+.Other-header {
+  width: 80%;
+  margin: 0 auto 50px auto;
+  font-weight: bold;
+}
+.Using-header h1,
+.Learning-header h1,
+.Other-header h1 {
+  text-align: left;
+}
+.Using-item,
+.Learning-item,
+.Other-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  margin: 20px 0;
+}
+.Using-icons,
+.Learning-icons,
+.Other-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin: 0 auto;
+  /* margin: 50px auto; */
+}
+.Using-icon,
+.Learning-icon,
+.Other-icon {
+  height: 100px;
+}
+.Portfolio {
+  padding: 0;
+}
+.Portfolio-header {
+  width: 100%;
+  height: 50vh;
+  background-image: url(../assets/img/dried-leaves-gray-blank-background.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Portfolio-title-holder {
+  height: 100%;
+  align-content: center;
+}
+.Portfolio-title {
+  text-align: center;
+  border: solid black 5px;
+  padding: 5px 50px;
+  margin: auto auto;
+  width: fit-content;
+}
+.port-header-text {
+  width: 100%;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  line-height: 1.5rem;
+  text-align: center;
+}
+.port-header-text h1 {
+  margin: 0;
+  padding: 30px 15px;
+  font-family: proxima-nova;
+}
+.Portfolio-items {
+  flex-wrap: wrap;
+  gap: 0;
+  flex: 1;
+}
+.Portfolio-item {
+  width: calc(100% / 3);
+}
+.port1 {
+  background-image: url(../assets/img/port1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.port2 {
+  background-image: url(../assets/img/port2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.port3 {
+  background-image: url(../assets/img/port3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Portfolio-item img {
+  width: 100%;
+  box-sizing: content-box;
+  opacity: 0;
+}
+.port-footer {
+  width: 100%;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  line-height: 1.5rem;
+  text-align: center;
+}
+.port-footer h1 {
+  margin: 0;
+  padding: 30px 15px;
+  font-family: proxima-light;
+}
+.contact-holder {
+  background-color: rgba(255, 255, 255, 0.7);
+  scroll-margin-top: 280px;
+}
+.contact {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact-header {
+  width: 100%;
+  padding: 50px 0px;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contact-title-holder {
+  height: 100%;
+  align-content: center;
+}
+.contact-title {
+  text-align: center;
+  border: solid black 5px;
+  padding: 5px 50px;
+  margin: auto auto;
+  width: fit-content;
+}
+.contact-text {
+  text-align: center;
+  margin: 50px auto;
+  width: fit-content;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.contact-form input {
+  border-left: solid black 5px;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: solid black 5px;
+  background-color: transparent;
+  padding: 10px 20px;
+  margin-bottom: 35px;
+  width: 30vw;
+  outline: 0px;
+  font-size: 20px;
+}
+.contact-form #Message {
+  height: 20vh;
+  border-left: solid black 5px;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: solid black 5px;
+  background-color: transparent;
+  padding: 10px 20px;
+  margin-bottom: 35px;
+  width: 30vw;
+  outline: 0px;
+  resize: none;
+  vertical-align: top;
+  text-align: start;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: 20px;
+}
+
+.contact-form button {
+  background-color: transparent;
+  border-right: solid 4px black;
+  border-left: solid 4px black;
+  border-bottom: 0;
+  border-top: 0;
+  margin: 30px auto;
+  padding: 10px 20px;
+  outline: 0px;
+  cursor: pointer;
+  font-size: 18px;
+  color: black;
+}
+.footer {
+  background-color: black;
+  text-align: center;
+  width: 100%;
+}
+.footer-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.footer-item {
+  margin: 20px auto;
+  color: white;
+  cursor: pointer;
+}
+.back-to-top {
+  text-decoration: none;
+  color: white;
+  margin: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .Portfolio-items {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    flex: 1;
+  }
+  .Portfolio-item {
+    width: 100%;
+  }
+  .Portfolio-header {
+    width: 100%;
+    height: 50vh;
+    background-image: url(../assets/img/dried-leaves-gray-blank-background.jpg);
+    background-position: left;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .Portfolio-title {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+@media only screen and (max-width: 700px) {
+  .white {
+    width: 100%;
+  }
+  .hero {
+    flex-direction: column;
+  }
+  .Hero-container {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    margin: 100px 0 0;
+  }
+  .black {
+    clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0 100%);
+    width: 100%;
+    height: 60vh;
+  }
+  .backgroundimage {
+    background-image: url(../assets/img/Profile-nobackground.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 100%; */
+    height: 100%;
+  }
+  .black-divider {
+    height: 0;
+    animation: 1s forwards scroll-fade;
+    background-color: black;
+    animation-timeline: view();
+  }
+  .Explore-items-Holder {
+    display: block;
+    width: 100%;
+  }
+  .Explore-items {
+    width: 100%;
+  }
+  .contact-form input {
+    width: 70vw;
+  }
+  .contact-form #Message {
+    width: 70vw;
+  }
+}
+
+/* RTL (Right-to-Left) Specific Styles for Persian/Farsi Pages */
+
+/* Portfolio Page RTL Adjustments */
+.Portfolio[dir="rtl"] {
+  font-family: "Yekan";
+}
+
+[dir="rtl"] .learnmore-button {
+  font-family: Yekan;
+}
+
+[dir="rtl"] .port-footer {
+  font-family: Yekan;
+}
+
+[dir="rtl"] .port-header-text h1 {
+  font-family: Yekan;
+}
+
+[dir="rtl"] .Portfolio-title {
+  font-family: Yekan;
+}
+
+[dir="rtl"] .Hero-About-me {
+  text-align: right;
+  padding: 0 5vw 0 0;
+}
+
+[dir="rtl"] .Explore-items {
+  text-align: right !important;
+}
+
+[dir="rtl"] .Explore-header {
+  padding: 0 20px 0 0;
+}
+
+[dir="rtl"] .Explore-text {
+  padding: 0 20px 0 0;
+}
+
+[dir="rtl"] .Explore-item-img {
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .Using-header h1,
+[dir="rtl"] .Learning-header h1,
+[dir="rtl"] .Other-header h1 {
+  text-align: right;
+}
+
+[dir="rtl"] .Using-icons,
+[dir="rtl"] .Learning-icons,
+[dir="rtl"] .Other-icons {
+  justify-content: right;
+}
+
+[dir="rtl"] .contact-form input,
+[dir="rtl"] .contact-form #Message {
+  border-left: solid black 5px;
+  border-right: 0;
+  text-align: left;
+}
+
+[dir="rtl"] .contact-form button {
+  border-left: solid 4px black;
+  border-right: solid 4px black;
+}
+
+/* Header RTL Adjustments */
+[dir="rtl"] .header {
+  direction: rtl;
+}
+
+[dir="rtl"] .header-menu ul {
+  direction: rtl;
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .header-menu li {
+  margin-left: 0;
+  margin-right: 2em;
+}
+
+[dir="rtl"] .header-logo {
+  order: 2;
+}
+
+[dir="rtl"] .header-menu {
+  order: 1;
+}
+
+/* Portfolio Hero Section RTL */
+[dir="rtl"] .hero {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .white {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+}
+
+[dir="rtl"] .black {
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+}
+
+[dir="rtl"] .backgroundimage {
+  background-position: right;
+}
+
+/* Footer RTL Adjustments */
+[dir="rtl"] .footer {
+  direction: rtl;
+  text-align: center;
+}
+
+[dir="rtl"] .footer-bottom {
+  direction: rtl;
+  text-align: center;
+}
+
+[dir="rtl"] .form-container {
+  text-align: left;
+}
+
+/* Mobile RTL Adjustments */
+@media only screen and (max-width: 700px) {
+  [dir="rtl"] .About-me {
+    margin-right: 2em;
+    margin-left: 0;
+  }
+
+  [dir="rtl"] .backgroundimage {
+    background-position: left;
+  }
+
+  [dir="rtl"] .white {
+    clip-path: none;
+  }
+
+  [dir="rtl"] .black {
+    clip-path: polygon(0% 0%, 100% 10%, 100% 100%, 0 100%);
+  }
+}
