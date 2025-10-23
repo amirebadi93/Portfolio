@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "../../Components/en/Header";
 import Styles from "../../Styles/Portfolio.module.css";
 import Divider from "../../assets/img/Divider.png";
@@ -62,6 +62,75 @@ function Portfolio() {
 
     return () => observer.disconnect();
   }, []);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+  const [formStatus, setFormStatus] = useState({ type: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = e => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus({ type: "", message: "" });
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormStatus({
+        type: "error",
+        message: "Please fill in all required fields (Name, Email, and Message)."
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:3001/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setFormStatus({
+          type: "success",
+          message: "Message sent successfully! I will get back to you soon."
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: ""
+        });
+      } else {
+        setFormStatus({
+          type: "error",
+          message: data.message || "Failed to send message. Please try again."
+        });
+      }
+    } catch (error) {
+      setFormStatus({
+        type: "error",
+        message: "Error sending message. Please check your connection."
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className={Styles.Portfolio}>
@@ -370,31 +439,49 @@ function Portfolio() {
                 </div>
               </div>
             </div>
-            <form action="" className={Styles["contact-form"]}>
+            <form onSubmit={handleSubmit} className={Styles["contact-form"]}>
               <input
                 type="text"
-                name="Name"
-                id="Name"
+                name="name"
+                id="name"
                 placeholder="Enter your name"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
               />
               <input
                 type="email"
-                name="Email"
-                id="Email"
+                name="email"
+                id="email"
                 placeholder="Enter your Email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
               />
               <input
                 type="tel"
-                name="Phone"
-                id="Phone"
+                name="phone"
+                id="phone"
                 placeholder="Enter your phone number"
+                value={formData.phone}
+                onChange={handleInputChange}
               />
               <textarea
-                name="Message"
-                id={Styles.Message}
+                name="message"
+                id="message"
                 placeholder="Enter your message"
-              />{" "}
-              <button type="submit">Send Message</button>
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+              />
+              {formStatus.message && (
+                <p className={`${Styles["form-message"]} ${Styles[formStatus.type]}`}>
+                  {formStatus.message}
+                </p>
+              )}
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
             </form>
           </div>
         </div>
